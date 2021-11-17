@@ -466,18 +466,3 @@ Yasnippet provides useful snippets, nothing to do with Company but still useful 
   (use-package yasnippet-snippets
     :ensure t)
 #+END_SRC
-** Java
-*** Description
-I use meghanada to provide very neat autocompletion when editing Java files. I use it mainly for autocompletion but there's a ton of other things it can do, automatic imports, for example.
-*** Code
-#+BEGIN_SRC emacs-lisp
-  (use-package meghanada
-    :ensure t
-    :defer nil
-    :config
-    (add-hook 'java-mode-hook
-              (lambda ()
-                (meghanada-mode t)))
-    (setq meghanada-java-path "java")
-    (setq meghanada-maven-path "mvn"))
-#+END_SRC
