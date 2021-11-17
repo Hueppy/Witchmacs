@@ -148,17 +148,10 @@ One of the main selling points of Emacs! no Emacs distribution is complete witho
 ** Code
 #+BEGIN_SRC emacs-lisp
   (use-package org
-    :config
-    (add-hook 'org-mode-hook 'org-indent-mode)
-    (add-hook 'org-mode-hook
-              '(lambda ()
-                 (visual-line-mode 1))))
-
-  (use-package org-indent
-    :diminish org-indent-mode)
-
-  (use-package htmlize
-    :ensure t)
+	:custom
+    (org-startup-indented t)
+	:config
+	(add-hook 'org-mode-hook #'visual-line-mode))
 #+END_SRC
 * Eshell
 ** Why Eshell?
