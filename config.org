@@ -466,30 +466,6 @@ Yasnippet provides useful snippets, nothing to do with Company but still useful 
   (use-package yasnippet-snippets
     :ensure t)
 #+END_SRC
-** C & C++
-*** Description
-Irony is the company backend for C and C++
-*** Code
-#+BEGIN_SRC emacs-lisp
-  (use-package company-c-headers
-    :defer nil
-    :ensure t)
-
-  (use-package company-irony
-    :defer nil
-    :ensure t
-    :config
-    (setq company-backends '((company-c-headers
-                              company-dabbrev-code
-                              company-irony))))
-  (use-package irony
-    :defer nil
-    :ensure t
-    :config
-    :hook
-    ((c++-mode c-mode) . irony-mode)
-    ('irony-mode-hook) . 'irony-cdb-autosetup-compile-options)
-#+END_SRC
 ** Java
 *** Description
 I use meghanada to provide very neat autocompletion when editing Java files. I use it mainly for autocompletion but there's a ton of other things it can do, automatic imports, for example.
