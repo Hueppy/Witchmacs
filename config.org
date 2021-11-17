@@ -68,7 +68,7 @@ Emacs breaks certain modes when it has line-numbers-mode enabled, (like docview 
 #+END_SRC
 ** Enable copypasting outside of Emacs
 #+BEGIN_SRC emacs-lisp
-  (setq x-select-enable-clipboard t)
+  (setq select-enable-clipboard t)
 #+END_SRC
 ** Disable automatic creation of backup files
 #+BEGIN_SRC emacs-lisp
