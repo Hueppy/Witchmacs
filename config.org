@@ -216,9 +216,10 @@ Auto-package-update automatically updates and removes old packages
   (use-package auto-package-update
     :defer nil
     :ensure t
+    :custom
+    (auto-package-update-delete-old-versions t)
+    (auto-package-update-hide-results t)
     :config
-    (setq auto-package-update-delete-old-versions t)
-    (setq auto-package-update-hide-results t)
     (auto-package-update-maybe))
 #+END_SRC
 ** Initialize =diminish=
