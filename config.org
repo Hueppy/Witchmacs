@@ -466,3 +466,49 @@ Yasnippet provides useful snippets, nothing to do with Company but still useful 
   (use-package yasnippet-snippets
     :ensure t)
 #+END_SRC
+
+** Initialize =lsp-mode=
+*** Description
+lsp-mode provides language server protocol support for emacs
+*** Code
+#+BEGIN_SRC emacs-lisp
+  (use-package lsp-mode
+    :ensure t
+    :diminish
+    :custom
+    (lsp-completion-provider :capf)
+    :bind
+    ("S-<f2>" . lsp-rename)
+    ("S-<f3>" . lsp-execute-code-action)
+    :hook (
+      (lsp-mode . lsp-enable-which-key-integration)
+      ((c-mode c++-mode) . lsp-deferred)
+    )
+    :commands (lsp lsp-deffered))
+
+  (use-package lsp-ui
+    :ensure t
+    :custom
+    (lsp-ui-doc-show-with-mouse nil)
+    (lsp-ui-doc-position 'bottom)
+    :bind
+    ([remap xref-find-definitions] . lsp-ui-peek-find-defintions)
+    ([remap xref-find-references] . lsp-ui-peek-find-references)
+    ("<f12>"   . lsp-ui-peek-find-definitions)
+    ("S-<f12>" . lsp-ui-peek-find-references)
+    :commands lsp-ui-mode)
+
+  (use-package dap-mode
+    :ensure t
+    :bind
+    ("<f5>" . dap-debug)
+    ("<f9>" . dap-breakpoint-toggle)
+    ("<f10>" . dap-next)
+    ("<f11>" . dap-step-in)
+    ("S-<f11>" . dap-step-out)
+    :custom
+    (dap-auto-configure-features '(sessions locals repl tooltip))
+    (dap-auto-configure-mode t)
+    :config
+    (require 'dap-gdb-lldb))
+#+END_SRC
