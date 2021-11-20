@@ -512,3 +512,12 @@ lsp-mode provides language server protocol support for emacs
     :config
     (require 'dap-gdb-lldb))
 #+END_SRC
+** C#
+*** Description
+csharp-mode provides a major mode for editing C# source files
+*** Code
+#+BEGIN_SRC emacs-lisp
+  (use-package csharp-mode
+    :ensure t
+    :hook lsp-deferred)
+#+END_SRC
