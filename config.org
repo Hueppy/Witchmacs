@@ -44,6 +44,11 @@ Also, to get autocompletion on C, C++ and Java files, you'll need to install the
 - +Clean up/organize init.el+
  + Clean up/organize config.org
 - Optimize startup time
+* Appearance
+** Font
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'default t :family "IBM Plex Mono")
+#+END_SRC
 * QoL section
 Minor quality-of-life modifications for a more pleasant Emacs experience
 ** Enable line numbers
@@ -521,3 +526,4 @@ csharp-mode provides a major mode for editing C# source files
     :ensure t
     :hook lsp-deferred)
 #+END_SRC
+
