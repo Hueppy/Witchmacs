@@ -59,6 +59,12 @@ Also, to get autocompletion on C, C++ and Java files, you'll need to install the
 #+BEGIN_SRC emacs-lisp
   (set-frame-parameter (selected-frame) 'alpha 0.95)
 #+END_SRC
+** Mode Line
+#+BEGIN_SRC emacs-lisp
+  (use-package doom-modeline
+    :ensure t
+    :init (doom-modeline-mode 1))  
+#+END_SRC
 * QoL section
 Minor quality-of-life modifications for a more pleasant Emacs experience
 ** Enable line numbers
