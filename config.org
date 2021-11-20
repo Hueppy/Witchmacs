@@ -55,6 +55,10 @@ Also, to get autocompletion on C, C++ and Java files, you'll need to install the
     :ensure t)
   (load-theme 'monokai t)
 #+END_SRC
+** Transparency
+#+BEGIN_SRC emacs-lisp
+  (set-frame-parameter (selected-frame) 'alpha 0.95)
+#+END_SRC
 * QoL section
 Minor quality-of-life modifications for a more pleasant Emacs experience
 ** Enable line numbers
