@@ -49,6 +49,12 @@ Also, to get autocompletion on C, C++ and Java files, you'll need to install the
 #+BEGIN_SRC emacs-lisp
   (set-face-attribute 'default t :family "IBM Plex Mono")
 #+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp
+  (use-package monokai-theme
+    :ensure t)
+  (load-theme 'monokai t)
+#+END_SRC
 * QoL section
 Minor quality-of-life modifications for a more pleasant Emacs experience
 ** Enable line numbers

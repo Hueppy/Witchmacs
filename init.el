@@ -28,8 +28,5 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; Load Witchmacs theme
-(load-theme 'Witchmacs t)
-
 ;; Load config.org for init.el configuration
 (org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
