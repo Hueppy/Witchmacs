@@ -367,9 +367,10 @@ Vim keybindings in Emacs. Please note that Witchmacs has NO other evil-mode comp
   (use-package evil
     :ensure t
     :defer nil
-    :init
-    (setq evil-want-keybinding nil)
-    (setq evil-want-C-u-scroll t)
+    :custom
+    (evil-want-keybinding nil)
+    (evil-want-C-u-scroll t)
+    (evil-auto-indent nil)
     :config
     (evil-mode 1))
 #+END_SRC
