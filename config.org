@@ -167,6 +167,10 @@ Super - Control - <arrow>
 #+BEGIN_SRC emacs-lisp
 (setq use-dialog-box nil)
 #+END_SRC
+** Disable lock file creation
+#+BEGIN_SRC emacs-lisp
+(setq create-lockfiles nil)
+#+END_SRC
 * =Org= mode
 ** Description
 One of the main selling points of Emacs! no Emacs distribution is complete without sensible and well-defined org-mode defaults
