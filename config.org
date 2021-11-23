@@ -557,6 +557,17 @@ lsp-mode provides language server protocol support for emacs
 ;:config
 ;    (projectile-register-project-type 'platformio '("platformio.ini"))
 #+END_SRC
+** Initialize =platformio-mode=
+*** Description
+PlatformIO provides some functionality for embedded programming
+*** Code
+#+BEGIN_SRC emacs-lisp
+  (use-package platformio-mode
+    :ensure t
+    :hook
+    ((c-mode c++-mode) . platformio-conditionally-enable)
+  )
+#+END_SRC
 ** C#
 *** Description
 csharp-mode provides a major mode for editing C# source files
