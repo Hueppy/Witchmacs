@@ -542,6 +542,12 @@ lsp-mode provides language server protocol support for emacs
     :config
     (require 'dap-gdb-lldb))
 #+END_SRC
+** Initialize =flycheck=
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :init (global-flycheck-mode))
+#+END_SRC
 ** C#
 *** Description
 csharp-mode provides a major mode for editing C# source files
