@@ -538,7 +538,8 @@ lsp-mode provides language server protocol support for emacs
     (dap-auto-configure-features '(sessions locals repl tooltip))
     (dap-auto-configure-mode t)
     :config
-    (require 'dap-gdb-lldb))
+    (require 'dap-gdb-lldb)
+    (require 'dap-netcore))
 #+END_SRC
 ** Initialize =flycheck=
 #+BEGIN_SRC emacs-lisp
