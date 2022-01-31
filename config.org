@@ -110,7 +110,7 @@ Emacs breaks certain modes when it has line-numbers-mode enabled, (like docview 
   (setq-default standard-indent 4)
   (setq c-basic-offset tab-width)
   (setq-default electric-indent-inhibit t)
-  (setq-default indent-tabs-mode t)
+  (setq-default indent-tabs-mode nil)
   (setq backward-delete-char-untabify-method 'nil)
 #+END_SRC
 ** Enable prettify symbols mode
@@ -130,17 +130,17 @@ Emacs breaks certain modes when it has line-numbers-mode enabled, (like docview 
 ** Creating a new window switches your cursor to it
 #+BEGIN_SRC emacs-lisp
   (defun split-and-follow-horizontally ()
-	(interactive)
-	(split-window-below)
-	(balance-windows)
-	(other-window 1))
+    (interactive)
+    (split-window-below)
+    (balance-windows)
+    (other-window 1))
   (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 
   (defun split-and-follow-vertically ()
-	(interactive)
-	(split-window-right)
-	(balance-windows)
-	(other-window 1))
+    (interactive)
+    (split-window-right)
+    (balance-windows)
+    (other-window 1))
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 #+END_SRC
 ** Transform yes-or-no questions into y-or-n
@@ -177,10 +177,10 @@ One of the main selling points of Emacs! no Emacs distribution is complete witho
 ** Code
 #+BEGIN_SRC emacs-lisp
   (use-package org
-	:custom
+    :custom
     (org-startup-indented t)
-	:config
-	(add-hook 'org-mode-hook #'visual-line-mode))
+    :config
+    (add-hook 'org-mode-hook #'visual-line-mode))
 #+END_SRC
 * Eshell
 ** Why Eshell?
@@ -356,8 +356,8 @@ When doing C-s to search, you get this very nice and neat mini-buffer that you c
 *** Code
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
-	:ensure t
-	:bind ("C-s" . 'swiper))
+    :ensure t
+    :bind ("C-s" . 'swiper))
 #+END_SRC
 ** Initialize =evil= mode
 *** Description
@@ -391,9 +391,9 @@ Avy is a very useful package; instead of having to move your cursor to a line th
 *** Code
 #+BEGIN_SRC emacs-lisp
   (use-package avy
-	:ensure t
-	:bind
-	("M-s" . avy-goto-char))
+    :ensure t
+    :bind
+    ("M-s" . avy-goto-char))
 #+END_SRC
 ** Initialize =ido= and =ido-vertical=
 *** Description
@@ -423,9 +423,9 @@ Utilize asynchronous processes whenever possible
 *** Code
 #+BEGIN_SRC emacs-lisp
   (use-package async
-	:ensure t
-	:init
-	(dired-async-mode 1))
+    :ensure t
+    :init
+    (dired-async-mode 1))
 #+END_SRC
 ** Initialize =page-break-lines=
 *** Code
